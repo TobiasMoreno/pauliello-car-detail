@@ -1,5 +1,32 @@
 # PaulielloCarDetail
 
+Landing page de conversión (single page) para Pauliello Car Detail — estética vehicular y detailing. Angular v21 standalone + SSR + Tailwind v4. El objetivo es convertir tráfico de Instagram en consultas por WhatsApp.
+
+## ⚠️ Placeholders a reemplazar antes de publicar
+
+Toda la configuración editable vive en `src/app/config/site.config.ts`:
+
+| Constante | Qué reemplazar |
+| --- | --- |
+| `WHATSAPP_NUMBER` | Número real en formato internacional sin signos (ej. `5491122334455`). El valor por defecto `549XXXXXXXXXX` es un placeholder y **no debe quedar en producción**. Todos los CTA usan este número vía `buildWhatsappUrl()`. |
+| `WHATSAPP_DEFAULT_MESSAGE` | Mensaje prearmado por defecto del enlace `wa.me`, si querés ajustarlo. |
+| `INSTAGRAM_URL` | Ya apunta a `https://www.instagram.com/pauliello_cardetail/`; verificá que siga vigente. |
+| `CONTACT_ADDRESS` | Dirección/ubicación real. Por defecto es un placeholder; **no se inventan datos**. |
+| `CONTACT_HOURS` | Horarios de atención reales. Por defecto es un placeholder. |
+
+### Imágenes de la galería
+
+Las fotos de trabajos son placeholders visuales (gradientes). Para cargar las reales:
+
+1. Editá `GALLERY_ITEMS` en `src/app/data/landing.data.ts` y completá el campo `imageSrc` de cada ítem con la ruta de la foto.
+2. En `src/app/sections/gallery.component.ts`, reemplazá los bloques marcados con `<!-- REEMPLAZAR: ... -->` por `<img ngSrc="...">` usando `NgOptimizedImage` (importar la directiva en el componente).
+
+### Otros datos editables
+
+El copy de servicios, proceso, FAQ, navegación y destacados está centralizado en `src/app/data/landing.data.ts`.
+
+---
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.4.
 
 ## Development server
