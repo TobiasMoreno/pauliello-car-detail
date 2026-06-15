@@ -2,13 +2,12 @@
  * Configuración centralizada del sitio.
  *
  * REEMPLAZAR antes de publicar:
- * - WHATSAPP_NUMBER: número real en formato internacional sin signos (ej. 5491122334455).
  * - INSTAGRAM_URL: ya apunta al perfil real; verificar si cambia.
  * - CONTACT_ADDRESS / CONTACT_HOURS: completar con datos reales o dejar como están.
  */
 
-/** Número de WhatsApp en formato internacional. REEMPLAZAR `549XXXXXXXXXX` por el real. */
-export const WHATSAPP_NUMBER = '549XXXXXXXXXX';
+/** Número de WhatsApp en formato internacional, sin signos (+54 9 3513 13-8222). */
+export const WHATSAPP_NUMBER = '5493513138222';
 
 /** Mensaje prearmado por defecto para los CTA genéricos. */
 export const WHATSAPP_DEFAULT_MESSAGE =
@@ -17,8 +16,11 @@ export const WHATSAPP_DEFAULT_MESSAGE =
 /** Perfil de Instagram de la marca. */
 export const INSTAGRAM_URL = 'https://www.instagram.com/pauliello_cardetail/';
 
-/** Placeholder de ubicación. REEMPLAZAR por la dirección real o dejar como referencia. */
-export const CONTACT_ADDRESS = 'Ubicación a confirmar — consultá por WhatsApp';
+/** Texto de ubicación mostrado en la sección de contacto. */
+export const CONTACT_ADDRESS = 'Córdoba — coordinamos el turno por WhatsApp';
+
+/** Enlace a la ubicación en Google Maps. */
+export const CONTACT_MAP_URL = 'https://maps.app.goo.gl/paQRRwQ29yznC1xd9';
 
 /** Placeholder de horarios. REEMPLAZAR por los horarios reales de atención. */
 export const CONTACT_HOURS = 'Horarios a confirmar — coordinamos el turno por WhatsApp';

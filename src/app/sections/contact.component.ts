@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RevealOnScrollDirective } from '../shared/reveal-on-scroll.directive';
-import { CONTACT_ADDRESS, CONTACT_HOURS, INSTAGRAM_URL } from '../config/site.config';
+import { CONTACT_ADDRESS, CONTACT_HOURS, CONTACT_MAP_URL, INSTAGRAM_URL } from '../config/site.config';
 import { WhatsappButtonComponent } from '../shared/whatsapp-button.component';
 
 /**
@@ -42,8 +42,21 @@ import { WhatsappButtonComponent } from '../shared/whatsapp-button.component';
           <dl class="grid gap-4 self-start rounded-2xl border border-white/10 bg-dark p-6">
             <div>
               <dt class="text-sm font-semibold uppercase tracking-wide text-gold">Ubicación</dt>
-              <!-- REEMPLAZAR: dirección real en CONTACT_ADDRESS (site.config.ts). -->
               <dd class="mt-1 text-base text-light">{{ contactAddress }}</dd>
+              <dd class="mt-2">
+                <a
+                  [href]="mapUrl"
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center gap-2 text-base font-semibold text-gold transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  Ver en Google Maps
+                </a>
+              </dd>
             </div>
             <div>
               <dt class="text-sm font-semibold uppercase tracking-wide text-gold">Horarios</dt>
@@ -60,4 +73,5 @@ export class ContactComponent {
   protected readonly instagramUrl = INSTAGRAM_URL;
   protected readonly contactAddress = CONTACT_ADDRESS;
   protected readonly contactHours = CONTACT_HOURS;
+  protected readonly mapUrl = CONTACT_MAP_URL;
 }
